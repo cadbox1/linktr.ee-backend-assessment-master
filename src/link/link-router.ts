@@ -83,7 +83,7 @@ router.post("/", async (req, res) => {
 	const newLink: GetLinksResult = {
 		...req.body,
 		id: "2", // @todo implement uuid
-		userId: "2",
+		userId: "1",
 		createdDate: new Date(),
 	};
 

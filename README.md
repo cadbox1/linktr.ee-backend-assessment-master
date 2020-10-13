@@ -14,6 +14,40 @@ Install Node 12.14.1 or run `nvm use` if you're using [NVM](https://github.com/n
 - GET /links
 - POST /links
 
+## Example Curls
+### Get Links
+```
+curl --location --request GET 'http://localhost:3000/links'
+```
+### Get Links by User
+```
+curl --location --request GET 'http://localhost:3000/links?userId=1'
+```
+## Post Classic Link
+```
+curl --location --request POST 'http://localhost:3000/links' \
+--header 'Content-Type: application/json' \
+--data-raw '{ 
+	"title": "github",
+	"type": "classic",
+	"data": {
+		"url": "https://github.com/cadbox1"
+	}
+} '
+```
+## Post Classic Link Fail
+```
+curl --location --request POST 'http://localhost:3000/links' \
+--header 'Content-Type: application/json' \
+--data-raw '{ 
+	"title": "this title is far far far far far far far far far far far far far far far far too long and will not be accepted, tolerated, allowed, accepted, tolerated, allowed, accepted, tolerated, allowed, etc.",
+	"type": "classic",
+	"data": {
+		"url": "https://github.com/cadbox1"
+	}
+} '
+```
+
 ## Progress
 ### GET /links
 Done:
