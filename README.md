@@ -63,6 +63,7 @@ Done:
 - creating a classic link
 
 Outstanding:
+- validate general requests
 - validate classic link url
 - validate shows
 - validate a player
