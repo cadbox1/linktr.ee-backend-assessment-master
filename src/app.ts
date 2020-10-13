@@ -1,13 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-// import { taskRouter } from "./services/task/task-router";
+import { linkRouter } from "./link/link-router";
 
 const app = express();
 
 app.set("port", process.env.PORT || 3000);
 app.use(bodyParser.json());
 
-// app.use("/task", taskRouter);
+app.use("/links", linkRouter);
 
 // @ts-ignore
 app.get("/", async (req, res) => {

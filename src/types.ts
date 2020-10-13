@@ -1,15 +1,15 @@
 // Common
-enum LinkTypeEnum {
+export enum LinkTypeEnum {
     CLASSIC,
     SHOW,
     PLAYER,
 }
 
-enum ShowPlatformEnum {
+export enum ShowPlatformEnum {
     SONGKICK
 }
 
-enum PlayerPlatform {
+export enum PlayerPlatform {
     SPOTIFY,
     APPLE,
     SOUNDCLOUD,
@@ -21,21 +21,21 @@ enum PlayerPlatform {
 
 // POST
 
-interface PostLinkBody {
+export interface PostLinkRequestBody {
     title: string;
     type: LinkTypeEnum
     data: PostLinkClassicData | PostLinkShowData | PostLinkPlayerData
 }
 
-interface PostLinkClassicData {
+export interface PostLinkClassicData {
     url: string;
 }
 
-interface PostLinkShowData {
+export interface PostLinkShowData {
     platform: ShowPlatformEnum,
     events: PostLinkEventData[],
 }
-interface PostLinkEventData {
+export interface PostLinkEventData {
     eventDate: Date;
     saleDate: Date;
     venue: string;
@@ -44,24 +44,24 @@ interface PostLinkEventData {
 }
 
 
-interface PostLinkPlayerData {
+export interface PostLinkPlayerData {
     platform: PlayerPlatform
 }
 
 // GET
 
-type UserId = string;
+export type UserId = string;
 
-interface GetLinksRequestParameters {
+export interface GetLinksRequestParameters {
     userId?: UserId;
     sortedBy?: string;
 }
 
-interface GetLinksResponse {
+export interface GetLinksResponse {
     results: GetLinksResult[];
 }
 
-interface GetLinksResult {
+export interface GetLinksResult {
     id: string;
     title: string;
     userId: UserId;
@@ -71,16 +71,16 @@ interface GetLinksResult {
 } 
 
 // could potentially make PostLinkClassicData reusable but I'd rather not couple them right now.
-interface GetLinkClassicData {
+export interface GetLinkClassicData {
     url: string;
 }
 
 // same here
-interface GetLinkShowData {
+export interface GetLinkShowData {
     platform: ShowPlatformEnum,
     events: GetLinkShowEventData[],
 }
-interface GetLinkShowEventData {
+export interface GetLinkShowEventData {
     eventDate: Date;
     saleDate: Date;
     venue: string;
@@ -89,7 +89,7 @@ interface GetLinkShowEventData {
 }
 
 // and same here
-interface GetLinkPlayerData {
+export interface GetLinkPlayerData {
     platform: PlayerPlatform;
     url: string;
 }
