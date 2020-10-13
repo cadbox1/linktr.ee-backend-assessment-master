@@ -76,9 +76,9 @@ Copied from `/src/types.ts`.
 ```
 // Common
 export enum LinkTypeEnum {
-    CLASSIC,
-    SHOW,
-    PLAYER,
+    CLASSIC = "classic",
+    SHOW = "show",
+    PLAYER = "player",
 }
 
 export enum ShowPlatformEnum {
