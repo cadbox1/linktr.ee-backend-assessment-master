@@ -1,0 +1,27 @@
+{
+	"name": "linktree-api",
+	"version": "0.0.1",
+	"author": "Cadell Christo",
+	"scripts": {
+		"start": "npm run ts:watch & npm run server:watch",
+		"server:watch": "nodemon --inspect build/server.js",
+		"ts": "tsc",
+		"ts:watch": "tsc -w"
+	},
+	"dependencies": {
+		"@types/express": "^4.17.6",
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"nodemon": "^2.0.3",
+		"tslib": "~1.10.0"
+	},
+	"devDependencies": {
+		"@types/jest": "~25.1.2",
+		"@types/node": "~12.12.27",
+		"jest": "~25.1.0",
+		"prettier": "~1.19.1",
+		"ts-jest": "~25.2.0",
+		"tsutils": "~3.17.0",
+		"typescript": "~3.8.2"
+	}
+}
